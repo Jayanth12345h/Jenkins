@@ -1,35 +1,12 @@
 package com.TestCases;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TC_Registration {
-
-	WebDriver driver;
-
-	@BeforeMethod
-	public void setup() {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://automationexercise.com/");
-		WebElement homeoption = driver.findElement(By.xpath("//a[normalize-space()='Home']"));
-		Assert.assertTrue(homeoption.isDisplayed(), "home option is not displayed");
-	}
-
-	@AfterMethod
-	public void teardown() {
-		driver.quit();
-	}
+public class TC_Registration extends BaseClass {
 
 	@Test
 	public void verify_Registration() {
@@ -75,35 +52,35 @@ public class TC_Registration {
 		if (!newsletter.isSelected()) {
 			newsletter.click();
 		}
-		
+
 		WebElement firstname = driver.findElement(By.id("first_name"));
 		firstname.sendKeys("jayanth");
-		
+
 		WebElement lastname = driver.findElement(By.id("last_name"));
 		lastname.sendKeys("last_name");
-		
+
 		WebElement company = driver.findElement(By.id("company"));
 		company.sendKeys("Test");
-		
+
 		WebElement address1 = driver.findElement(By.id("address1"));
 		address1.sendKeys("8-567, hyd");
-		
+
 		WebElement countrydropdown = driver.findElement(By.id("country"));
 		Select country = new Select(countrydropdown);
 		country.selectByVisibleText("India");
-		
+
 		WebElement state = driver.findElement(By.id("state"));
 		state.sendKeys("Telangana");
-		
+
 		WebElement city = driver.findElement(By.id("city"));
 		city.sendKeys("Hyderabad");
-		
+
 		WebElement zipcode = driver.findElement(By.id("zipcode"));
 		zipcode.sendKeys("500089");
-		
+
 		WebElement mobilenumber = driver.findElement(By.id("mobile_number"));
 		mobilenumber.sendKeys("9876543210");
-		
+
 		driver.findElement(By.xpath("//button[normalize-space()='Create Account']")).click();
 
 	}
