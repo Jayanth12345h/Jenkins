@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.TestCases.TC_Registration">
+      <class name="com.TestCases.TC_Spicejet">
         <methods>
-          <include name="verify_Registration"/>
-          <include name="teardown"/>
-          <include name="setup"/>
+          <include name="spicejetcheck"/>
         </methods>
-      </class> <!-- com.TestCases.TC_Registration -->
+      </class> <!-- com.TestCases.TC_Spicejet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

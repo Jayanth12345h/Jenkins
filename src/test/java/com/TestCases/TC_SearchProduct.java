@@ -5,11 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
-@Test
-
 public class TC_SearchProduct extends BaseClass {
 
+	@Test
 	public void verify_searchproduct_functionality() throws InterruptedException {
 		WebElement searchproducts = driver.findElement(By.xpath("//a[@href='/products']"));
 		searchproducts.click();
@@ -25,3 +23,5 @@ public class TC_SearchProduct extends BaseClass {
 	}
 
 }
+
+
